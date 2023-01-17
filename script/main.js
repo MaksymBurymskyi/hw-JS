@@ -66,7 +66,7 @@ setTimeout(function () {
 
 // завдання #3:
 
-// - console.log(Boolean(alert('5')));//повртає у консоль - false - бо функція alert дає undefined, яке э завжи false;
+// - console.log(Boolean(alert('5')));//повртає у консоль - false - бо функція alert дає undefined, яке э завжи false. Тобто typeof alert() є undefined, Boolean(undefined) є false;
 // - console.log(true > false);//повртає у консоль - true - тому, що для виконання порівняння виконується конвертація. true = 1,  false = 0. Одиниця більше ніж ноль;
 // - console.log(true > 5);//повртає у консоль - false - тому, що для виконання порівняння виконується конвертація. true = 1;
 // - console.log(true < '5');//повртає у консоль - true - тому, що для виконання порівняння виконується конвертація. true = 1. Рядок "5" стає числом 5;
