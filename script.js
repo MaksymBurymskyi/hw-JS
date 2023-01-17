@@ -22,7 +22,7 @@ secondSalary = +secondSalary;
 twoMonthSalary = firstSalary + secondSalary;
 totalSalary = twoMonthSalary + 1;
 
-alert(`Your salary fot two monts is: ${twoMonthSalary}$`);
+alert(`Your salary for two monts is: ${twoMonthSalary}$`);
 alert(
   `You have extra bomus! Your total salary was: ${twoMonthSalary}$ it\`s increase for 1$ and now it is: ${totalSalary}$`
 );
