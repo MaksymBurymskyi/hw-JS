@@ -15,7 +15,8 @@ setTimeout(function () {
     alert('Please, enter Your data.')
     
     name = prompt("Enter your name", "name");
-    while (name == "name") {
+    // Якщо name == null не вказати в умові циклу if всередині не спрацює
+    while (name == "name" || name == null) {
         alert(`You have not entered any value. Please try again`);
         name = prompt("Enter your name", "name");
         if (name == null) {
@@ -26,6 +27,7 @@ setTimeout(function () {
     alert(`Your name is: ${name}.`);
 
     secondName = prompt("Enter your surname", "surname");
+    // те ж саме, що і у до цього 
     while (secondName == "surname") {
         alert(`You have not entered any value. Please try again`);
         secondName = prompt("Enter your surname", "surname");
@@ -51,8 +53,12 @@ setTimeout(function () {
     };
     alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}.`);
 
-    isAdmin = confirm("Are you admine?");
+//     isAdmin = confirm("Are you admine?");
+    // Ось так можна скоротити
+    isAdmin = confirm("Are you admine?") ? 'You are an admin.' : 'You are not an admin.';
+    
     if (isAdmin) {
+        // Ось цю частину з alert можна винести поза умову. Так як в ній нічого не змінюється
         alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}. Admin status: ${isAdmin}`);
         isAdmin = 'You are an admin.';
     } else {
