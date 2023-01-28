@@ -23,13 +23,14 @@ let salaries = {
   designer: 8000,
   dayPay() {
     "Схоже цей метод тут знаходиться щоб заважати))";
+    // Ні, якраз він тут для того, щоб у total ви перевірили, чи не ф-ія на даній ітерації
   },
   total() {
     let sum = 0;
     for (const key in this) {
-      const element = +this[key];
-      if (element) {
-        sum += element;
+      // Можна трошки коротше ту перевірку зробити
+      if (typeof this[key] === "number") {
+        sum += this[key];
       }
     }
     console.log(sum);
@@ -93,9 +94,11 @@ console.log(asus + iphone);
 // ----- №1
 
 let sortNumbers = (firstNum, secondNum) => {
-  if ((firstNum % 2 == 0) & (secondNum % 2 == 0)) {
+  // Зайві дужки і завжди порівнюєте за допомогою суворого порівнянн (===)
+  if (firstNum % 2 === 0 && secondNum % 2 === 0) {
     return firstNum * secondNum;
   } else if ((firstNum + secondNum) % 2 == 0) {
+    // Тут класно придумали, але виглядає трошки заплутано. Краще винести перевірки firstNum % 2 == 0 та secondNum % 2 == 0 в окремі змінні і перевикористовувати їх
     return firstNum + secondNum;
   } else {
     return firstNum % 2 > secondNum % 2 ? firstNum : secondNum;
@@ -123,14 +126,13 @@ const tasks = {
         "Your task won't be create. You should enter the name of the doer."
       );
     } else if (name.length > 1) {
-      for (const key in this) {
-        switch (name) {
-          case key:
-            if (this[key]?.status == "new") {
-              return alert(`Current task for ${name} isn't complete yet`);
-            }
-            break;
-        }
+      // Тут прямо дуууже заплутано вийшло. Намагайтеся писати код якомога простіше 
+      // Ось тут можете почитати про деякі принципи https://tproger.ru/articles/5-principov-chitaemogo-koda-kiss-yagni-dry-bduf-i-britva-okkama/. 
+      // Нажаль не знайшла нормальну статтю українською, пізніше додам в Notion
+      // А ось тут можете почитати про варіанти, як шукати по ключу в обʼєкті https://www.freecodecamp.org/news/how-to-check-if-an-object-has-a-key-in-javascript/
+      // В результаті виглядати має якось так:
+      if(this[name]?.status == "new") {
+        return alert(`Current task for ${name} isn't complete yet`);
       }
       task = prompt("Enter your task", "new task");
     } else {
