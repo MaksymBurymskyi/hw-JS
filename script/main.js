@@ -2,72 +2,80 @@
 
 // task #1 - вивести інформацію у консоль
 
-console.log("You can ignore single and double quotes like this: \\\'\\\' \\\" \\\"");
+console.log(
+  "You can ignore single and double quotes like this: \\'\\' \\\" \\\""
+);
 
 // завдання #2 - спливаючі вікна
 
 setTimeout(function () {
-    let name = "name",
-        secondName = 'surname',
-        age,
-        isAdmin;
-    
-    alert('Please, enter Your data.')
-    
+  let name = "name",
+    secondName = "surname",
+    age,
+    isAdmin;
+
+  alert("Please, enter Your data.");
+
+  name = prompt("Enter your name", "name");
+
+  while (name == "name" || name == null) {
+    alert(`You have not entered any value. Please try again`);
     name = prompt("Enter your name", "name");
-    // Якщо name == null не вказати в умові циклу if всередині не спрацює
-    while (name == "name" || name == null) {
-        alert(`You have not entered any value. Please try again`);
-        name = prompt("Enter your name", "name");
-        if (name == null) {
-            alert(`You are boring. Enter your name`);
-            name = prompt("Enter your name", "name");
-        };
-    };
-    alert(`Your name is: ${name}.`);
-
-    secondName = prompt("Enter your surname", "surname");
-    // те ж саме, що і у до цього 
-    while (secondName == "surname") {
-        alert(`You have not entered any value. Please try again`);
-        secondName = prompt("Enter your surname", "surname");
-        if (secondName == null) {
-            alert(`You are boring. Enter your surname`);
-            secondName = prompt("Enter your surname", "surname");
-        };
-    };
-    alert(`Your full name is: ${name} ${secondName}.`);
-
-    age = prompt("How old are you?", "age");
-    while (isNaN(age)) {
-        alert(`You have not entered any numbers. Please try again`);
-        age = prompt("How old are you?", "age");
-        if (age == null) {
-            alert(`You are boring. Enter your age`);
-            age = prompt("How old are you?", "age");
-        };
-        while (age <= 3) {
-            alert(`You are older than ${age}. How old are you?`);
-            age = prompt("How old are you?", "age");
-        };
-    };
-    alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}.`);
-
-//     isAdmin = confirm("Are you admine?");
-    // Ось так можна скоротити
-    isAdmin = confirm("Are you admine?") ? 'You are an admin.' : 'You are not an admin.';
-    
-    if (isAdmin) {
-        // Ось цю частину з alert можна винести поза умову. Так як в ній нічого не змінюється
-        alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}. Admin status: ${isAdmin}`);
-        isAdmin = 'You are an admin.';
-    } else {
-        alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}. Admin status: ${isAdmin}`);
-        isAdmin = 'You are not an admin.';
+    if (name == null) {
+      alert(`You are boring. Enter your name`);
+      name = prompt("Enter your name", "name");
     }
-    
-    const result = `You are ${name.toUpperCase()} ${secondName.toUpperCase()}, You have ${age} years old. ${isAdmin}`;
-    document.querySelector('.secondTask').innerHTML = result;
+  }
+  alert(`Your name is: ${name}.`);
+
+  secondName = prompt("Enter your surname", "surname");
+
+  while (secondName == "surname" || secondName == null) {
+    alert(`You have not entered any value. Please try again`);
+    secondName = prompt("Enter your surname", "surname");
+    if (secondName == null) {
+      alert(`You are boring. Enter your surname`);
+      secondName = prompt("Enter your surname", "surname");
+    }
+  }
+  alert(`Your full name is: ${name} ${secondName}.`);
+
+  age = prompt("How old are you?", "age");
+  while (isNaN(age)) {
+    alert(`You have not entered any numbers. Please try again`);
+    age = prompt("How old are you?", "age");
+    if (age == null) {
+      alert(`You are boring. Enter your age`);
+      age = prompt("How old are you?", "age");
+    }
+    while (age <= 3) {
+      alert(`You are older than ${age}. How old are you?`);
+      age = prompt("How old are you?", "age");
+    }
+  }
+  alert(`Your full name is: ${name} ${secondName}. Your age is: ${age}.`);
+
+  //     isAdmin = confirm("Are you admine?");
+  // Ось так можна скоротити
+  isAdmin = confirm("Are you admine?")
+    ? "You are an admin."
+    : "You are not an admin.";
+
+  if (isAdmin) {
+    // Ось цю частину з alert можна винести поза умову. Так як в ній нічого не змінюється
+    alert(
+      `Your full name is: ${name} ${secondName}. Your age is: ${age}. Admin status: ${isAdmin}`
+    );
+    isAdmin = "You are an admin.";
+  } else {
+    alert(
+      `Your full name is: ${name} ${secondName}. Your age is: ${age}. Admin status: ${isAdmin}`
+    );
+    isAdmin = "You are not an admin.";
+  }
+
+  const result = `You are ${name.toUpperCase()} ${secondName.toUpperCase()}, You have ${age} years old. ${isAdmin}`;
+  document.querySelector(".secondTask").innerHTML = result;
 }, 5500);
 
 // завдання #3:
