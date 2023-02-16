@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw29 ex2</title>
+  </head>
+  <body>
+    <a href="site.ua/ua/page_1">ua 1</a>
+    <a href="site.ua/ua/page_2">ua 2</a>
+    <a href="site.ua/en/page_1">en 1</a>
+    <a href="site.ua/en/page_2">en 2</a>
+    <p>
+      <span><a href="site.ua/ua/page_3">ua 3</a></span>
+    </p>
+    <div><a href="site.ua/en/page_3">en 3</a></div>
+
+    <script>
+      "use script";
+      const linksUa = document.querySelectorAll("a[href*='ua/ua']");
+      console.log(linksUa);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw29 ex1</title>
+  </head>
+  <body>
+    <div class="dom">
+      <h1 id="dom">Lesson about DOM</h1>
+      <div class="dom">
+        <a href="#dom"></a>
+        <h2>DOM</h2>
+        <h2>DOM method</h2>
+        <span>Document Object Model</span>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+      let title = document.querySelector("h2").nextElementSibling;
+      title.append(" description");
+      console.log(title);
+    </script>
+  </body>
+</html>

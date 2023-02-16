@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw29 ex4</title>
+  </head>
+  <body>
+    <h1>Document Object Model<span>DOM</span></h1>
+
+    <script>
+      const title = document.querySelector("h1");
+      let link = document.createElement("a");
+
+      link.setAttribute("id", "link");
+      link.setAttribute("href", "https://dom.spec.whatwg.org/");
+      link.innerHTML = "<h1>Document Object Model<span>DOM</span></h1>";
+
+      document.querySelector("h1").replaceWith(link);
+    </script>
+  </body>
+</html>

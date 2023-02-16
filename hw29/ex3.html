@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw29 ex3</title>
+  </head>
+  <body>
+    <ul id="ul">
+      <li id="first">1</li>
+      <li id="third">3</li>
+    </ul>
+
+    <script>
+      "use strict";
+      let li0 = document.createElement("li");
+      let li4 = document.createElement("li");
+
+      li0.innerText = "0";
+      li0.setAttribute("id", "null");
+      document.getElementById("ul").prepend(li0);
+
+      document
+        .getElementById("ul")
+        .children[2].insertAdjacentHTML(
+          "beforeBegin",
+          '<li id="second">2</li>'
+        );
+
+      li4.setAttribute("id", "fourth");
+      li4.innerText = "4";
+      document.getElementById("ul").append(li4);
+    </script>
+  </body>
+</html>
