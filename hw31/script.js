@@ -90,21 +90,23 @@ const btnAddA = document.querySelector(".add-a");
 const btnAddAb = document.querySelector(".add-ab");
 const btnAddAll = document.querySelector(".add-all");
 
+function clearsBlocks(blockA, blockB) {
+  blockA.innerHTML = "";
+  blockB.innerHTML = "";
+}
+
 btnAddA.addEventListener("click", () => {
-  userA.innerHTML = "";
-  userAb.innerHTML = "";
+  clearsBlocks(userA, userAb);
   userA.appendChild(writeToBlock(getAsincData(url)));
 });
 
 btnAddAb.addEventListener("click", () => {
-  userA.innerHTML = "";
-  userAb.innerHTML = "";
+  clearsBlocks(userA, userAb);
   userAb.appendChild(writeToBlockWithFilter(getAsincData(url)));
 });
 
 btnAddAll.addEventListener("click", () => {
-  userA.innerHTML = "";
-  userAb.innerHTML = "";
+  clearsBlocks(userA, userAb);
   userA.appendChild(writeToBlock(getAsincData(url)));
   userAb.appendChild(writeToBlockWithFilter(getAsincData(url)));
 });
