@@ -14,7 +14,7 @@ function validateEmail(email) {
     return false;
   } else if (email.indexOf("@") < 2) {
     return false;
-  } else if (email.includes(".") < 1) {
+  } else if (!email.includes(".")) {
     return false;
   } else if (email.includes(".@") || email.includes("@.")) {
     return false;
@@ -27,6 +27,7 @@ function validateEmail(email) {
 
 console.log(validateEmail("em@g.m")); //false
 console.log(validateEmail("e@mailgmail.com")); //false
+console.log(validateEmail("email@gmailcom")); //false
 console.log(validateEmail("email@g@mail.com")); //false
 console.log(validateEmail("email@.gmail.com")); //false
 console.log(validateEmail("email.@gmail.com")); //false
