@@ -57,6 +57,7 @@ let ice = new Ice(2);
 console.log(cocaCola.VAT());
 console.log(johnWalker.VAT());
 console.log(johnWalker.exciseDuty());
+("");
 console.log(ice.singleTax());
 
 // завдання 2
