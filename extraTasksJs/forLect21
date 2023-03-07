@@ -35,3 +35,32 @@ const tasks = {
 
 У випадку якщо такий ключ існує - показуємо повідомлення, що ця людина вже зайнята
 *** за бажанням ще можна додати перевірку, якщо статус задачу done - у такому випадку змінювати статус на new, і додавати новий текст задачі */
+
+const tasks = {
+  Anna: {
+    status: "new",
+    text: "Create checkout page",
+  },
+  Ihor: {
+    status: "done",
+    text: "Add styles to header",
+  },
+  addNewTask(name = prompt("name"), task) {
+    if (this[name]) {
+      if (this[name].status == "new") {
+        alert("worker is busy");
+      } else {
+        this[name].status = "new";
+        this[name].text = prompt("new task");
+      }
+    } else {
+      this[name] = {
+        status: "new",
+        text: prompt("new task"),
+      };
+    }
+  },
+};
+
+console.log(tasks.addNewTask());
+console.log(tasks);
